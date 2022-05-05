@@ -3,6 +3,7 @@ import mongoose from 'mongoose'
 const ticketsSchema = mongoose.Schema({
     nameTour: {
         type: String,
+        trim: true,
         required: [true, 'Tour name is required']
     },
     amount: {
@@ -13,10 +14,49 @@ const ticketsSchema = mongoose.Schema({
         type: String,
         default: 'Jonas'
     },
-    date: {
+    duration: {
+        type: Number,
+        requires: [true, 'Duration is required']
+    },
+    maxGroupSize: {
+        type: Number,
+        required: [true, 'Max group size is required']
+    },
+    ratingsAverage: {
+        type: Number,
+        default: 4.5
+    },
+    ratingsQuantity: {
+        type: Number,
+        default: 0
+    },
+    difficulty: {
+        type: String,
+        required: [true, 'Difficulty is required']
+    },
+    price: {
+        type: Number,
+        required: [true, 'Price is required']
+    },
+    priceDiscount: Number,
+    summary: {
+        type: String,
+        trim: true
+    },
+    description: {
+        type: String,
+        trim: true
+    },
+    imageCover: {
+        type: String,
+        required: [true, 'Image is required']
+    },
+    images: [String],
+    createdAt: {
         type: Date,
         default: Date.now()
-    }
+    },
+    startDate: [Date]
 })
 
 export default mongoose.model('Tickets', ticketsSchema)
