@@ -1,0 +1,21 @@
+GET http://localhost:3000/api/v1/tickets/ HTTP/1.1
+
+###
+POST http://localhost:3000/api/v1/tickets/ HTTP/1.1
+content-type: application/json
+
+{
+    "nameTour": "Vip",
+    "amount": 12
+}
+
+###
+PATCH http://localhost:3000/api/v1/tickets/626682627149097514dc69bb HTTP/1.1
+content-type: application/json
+
+{
+    "nameTour": "Vip 555555555555"
+}
+
+###
+DELETE http://localhost:3000/api/v1/tickets/6264c6d808d7e6bf9f7b434e HTTP/1.1
