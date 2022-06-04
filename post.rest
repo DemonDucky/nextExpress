@@ -1,12 +1,23 @@
-GET http://localhost:3000/api/v1/tickets/ HTTP/1.1
+GET http://localhost:3000/api/v1/tickets/
 
 ###
 POST http://localhost:3000/api/v1/tickets/ HTTP/1.1
 content-type: application/json
 
 {
-    "nameTour": "Vip",
-    "amount": 12
+"ratingsAverage": 3,
+"ratingsQuantity": 0,
+"images": [],
+"maxGroupSize": 3,
+"difficulty": "normal",
+"imageCover": "https://",
+"createdAt": "2022-05-11T11:41:49.100Z",
+"startDate": [],
+"nameTour": "New 2",
+"amount": 12,
+"price": 152000,
+"tourGuide": "Jonas",
+"date": "2022-04-25T11:13:28.408Z"
 }
 
 ###
@@ -19,3 +30,6 @@ content-type: application/json
 
 ###
 DELETE http://localhost:3000/api/v1/tickets/6264c6d808d7e6bf9f7b434e HTTP/1.1
+
+###
+GET http://localhost:3000/api/v1/tickets/get-stats

@@ -11,5 +11,12 @@ router
     .route('/:id')
     .delete(ticketsController.deleteTicket)
     .patch(ticketsController.patchTicket)
+router.get(
+    '/top-3-tickets',
+    ticketsController.top3Tickets,
+    ticketsController.getAllTickets
+)
+
+router.route('/get-stats').get(ticketsController.ticketsStats)
 
 export default router
